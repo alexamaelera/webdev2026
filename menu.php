@@ -206,7 +206,15 @@ foreach ($cart as $item) {
                             ?>
                                 <div class="product-card">
                                     <div class="product-image">
-                                        <img src="<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
+                                        <?php
+                                            $imgPath = $product['image'] ?? '';
+                                            if (!preg_match('#^(?:/|https?://)#i', $imgPath)) {
+                                                $imgPath = '/img/' . basename($imgPath);
+                                            } elseif (strpos($imgPath, '/img/') !== 0 && strpos($imgPath, 'http') !== 0) {
+                                                $imgPath = '/img/' . basename($imgPath);
+                                            }
+                                        ?>
+                                        <img src="<?php echo htmlspecialchars($imgPath); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
                                     </div>
                                     <h3><?php echo htmlspecialchars($product['name']); ?></h3>
                                     <p class="product-price">$<?php echo number_format($product['price'], 2); ?></p>

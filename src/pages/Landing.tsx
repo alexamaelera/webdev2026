@@ -4,6 +4,15 @@ import { Link } from 'react-router-dom'
 interface StoreInfo { description?: string; address?: string; phone?: string; email?: string; hours?: string }
 interface Product { id:number; name:string; category:string; price:number; image:string }
 
+function ensureImgPath(img?: string){
+  if(!img) return '/img/placeholder.jpg'
+  const s = String(img)
+  if(s.startsWith('http') ) return s
+  if(s.startsWith('/img/')) return s
+  if(s.startsWith('/')) return '/img/' + s.split('/').pop()
+  return '/img/' + s.split('/').pop()
+}
+
 function useScrollReveal(){
   const ref = useRef<HTMLDivElement | null>(null)
   const [isVisible, setIsVisible] = useState(false)
@@ -127,7 +136,7 @@ export default function Landing(){
             <p className="section-description" style={{color:'rgba(255,255,255,0.75)'}}>A taste of what awaits you — handcrafted with passion.</p>
             <div className="featured-grid">{featuredProducts.map((product, idx)=> (
               <div key={product.id} className="featured-card" style={{animationDelay:`${idx*0.1}s`}}>
-                <div className="featured-image"><img src={product.image} alt={product.name}/></div>
+                <div className="featured-image"><img src={ensureImgPath(product.image)} alt={product.name}/></div>
                 <div className="featured-info"><h3>{product.name}</h3><span className="featured-price">${product.price.toFixed(2)}</span></div>
               </div>
             ))}</div>

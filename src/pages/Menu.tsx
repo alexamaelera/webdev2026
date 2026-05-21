@@ -13,8 +13,10 @@ interface Product {
 function normalizeImagePath(img?: string) {
   if (!img) return ''
   const value = String(img).replace(/\\\\/g, '/').replace(/\\/g, '/')
-  if (value.startsWith('http') || value.startsWith('/') || value.startsWith('data:image/')) return value
-  if (/\.(jpg|jpeg|png|gif|webp|svg)$/i.test(value)) return '/' + value
+  if (value.startsWith('http') || value.startsWith('/img/') || value.startsWith('data:image/')) return value
+  // If it's an absolute path but not /img/, convert to use /img/ + basename
+  if (value.startsWith('/')) return '/img/' + value.split('/').pop()
+  if (/\.(jpg|jpeg|png|gif|webp|svg)$/i.test(value)) return '/img/' + value.split('/').pop()
   return value
 }
 

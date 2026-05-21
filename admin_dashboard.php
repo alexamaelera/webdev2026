@@ -314,7 +314,15 @@ if (isset($_GET['edit_staff'])) {
                                 <div style="margin: 8px 0;">or</div>
                                 <input type="text" id="image" name="image" placeholder="Emoji or image URL" value="<?php echo $edit_product ? $edit_product['image'] : '🍰'; ?>" maxlength="255">
                                 <?php if ($edit_product && $edit_product['image'] && strpos($edit_product['image'], 'img/') === 0): ?>
-                                    <div style="margin-top:8px;"><img src="<?php echo htmlspecialchars($edit_product['image']); ?>" alt="Current Image" style="max-width:60px;max-height:60px;"></div>
+                                    <?php
+                                        $imgPath = $edit_product['image'] ?? '';
+                                        if (!preg_match('#^(?:/|https?://)#i', $imgPath)) {
+                                            $imgPath = '/img/' . basename($imgPath);
+                                        } elseif (strpos($imgPath, '/img/') !== 0 && strpos($imgPath, 'http') !== 0) {
+                                            $imgPath = '/img/' . basename($imgPath);
+                                        }
+                                    ?>
+                                    <div style="margin-top:8px;"><img src="<?php echo htmlspecialchars($imgPath); ?>" alt="Current Image" style="max-width:60px;max-height:60px;"></div>
                                 <?php endif; ?>
                             </div>
                         </div>
@@ -349,7 +357,15 @@ if (isset($_GET['edit_staff'])) {
                                 <td>$<?php echo number_format($product['price'], 2); ?></td>
                                 <td>
                                     <?php if (strpos($product['image'], 'img/') === 0): ?>
-                                        <img src="<?php echo htmlspecialchars($product['image']); ?>" alt="Product Image" style="max-width:40px;max-height:40px;">
+                                        <?php
+                                            $imgPath = $product['image'] ?? '';
+                                            if (!preg_match('#^(?:/|https?://)#i', $imgPath)) {
+                                                $imgPath = '/img/' . basename($imgPath);
+                                            } elseif (strpos($imgPath, '/img/') !== 0 && strpos($imgPath, 'http') !== 0) {
+                                                $imgPath = '/img/' . basename($imgPath);
+                                            }
+                                        ?>
+                                        <img src="<?php echo htmlspecialchars($imgPath); ?>" alt="Product Image" style="max-width:40px;max-height:40px;">
                                     <?php else: ?>
                                         <?php echo $product['image']; ?>
                                     <?php endif; ?>

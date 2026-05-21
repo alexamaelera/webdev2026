@@ -55,7 +55,7 @@ $store_info = getStoreInfo();
 		<section class="landing-hero">
 			<div class="hero-left-circle">
 				<div class="circle-frame">
-					<img src="img/c1.jpg" alt="Coffee" class="circle-image">
+					<img src="/img/c1.jpg" alt="Coffee" class="circle-image">
 				</div>
 			</div>
 			<div class="hero-center">
@@ -65,7 +65,7 @@ $store_info = getStoreInfo();
 			</div>
 			<div class="hero-right-circle">
 				<div class="circle-frame">
-					<img src="img/c1.jpg" alt="Coffee" class="circle-image">
+					<img src="/img/c1.jpg" alt="Coffee" class="circle-image">
 				</div>
 			</div>
 		</section>

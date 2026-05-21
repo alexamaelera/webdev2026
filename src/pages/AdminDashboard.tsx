@@ -559,7 +559,15 @@ export default function AdminDashboard() {
                         <td>
                           <div className="td-image">
                             {product.image && (product.image.startsWith('http') || product.image.startsWith('/') || product.image.startsWith('data:image/') || /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(product.image)) ? (
-                              <img src={product.image.startsWith('/') || product.image.startsWith('http') || product.image.startsWith('data:image/') ? product.image : '/' + product.image} alt={product.name} />
+                              <img src={
+                                product.image && (product.image.startsWith('http') || product.image.startsWith('/img/') || product.image.startsWith('data:image/'))
+                                  ? product.image
+                                  : product.image && product.image.startsWith('/')
+                                  ? '/img/' + product.image.split('/').pop()
+                                  : product.image
+                                  ? '/img/' + product.image.split('/').pop()
+                                  : '/img/placeholder.jpg'
+                              } alt={product.name} />
                             ) : (
                               <span className="emoji-img">{product.image}</span>
                             )}
