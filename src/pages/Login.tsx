@@ -56,7 +56,17 @@ export default function Login() {
       if (!key) return
       dedup.set(key, u)
     })
-    return Array.from(dedup.values())
+    const result = Array.from(dedup.values())
+
+    // If no users found from data files or localStorage, provide a small embedded fallback
+    if (result.length === 0) {
+      return [
+        { id: 1, username: 'jireh', password: 'faith', role: 'admin', email: 'jireh@lexandnitchcafe.com' },
+        { id: 2, username: 'ali', password: 'ali123', role: 'staff', email: 'ali@gmail.com' }
+      ]
+    }
+
+    return result
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
