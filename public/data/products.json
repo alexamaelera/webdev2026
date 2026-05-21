@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Espresso",
+        "category": "coffee",
+        "price": 3.5,
+        "image": "img/espresso.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Cappuccino",
+        "category": "coffee",
+        "price": 4.5,
+        "image": "img/capuccino.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Latte",
+        "category": "coffee",
+        "price": 4.75,
+        "image": "img/late.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Mocha",
+        "category": "coffee",
+        "price": 5,
+        "image": "img/mocha.jpg"
+    }
+]
