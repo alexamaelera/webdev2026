@@ -1,0 +1,114 @@
+[
+    {
+        "id": 1,
+        "name": "Espresso",
+        "category": "coffee",
+        "price": 3.5,
+        "image": "img\/espresso.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Cappuccino",
+        "category": "coffee",
+        "price": 4.5,
+        "image": "img\/capuccino.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Latte",
+        "category": "coffee",
+        "price": 4.75,
+        "image": "img\/late.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Mocha",
+        "category": "coffee",
+        "price": 5,
+        "image": "img\/mocha.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Chocolate Chip Cookie",
+        "category": "cookies",
+        "price": 2.5,
+        "image": "img\/chocolate_cookie.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Oatmeal Raisin",
+        "category": "cookies",
+        "price": 2.5,
+        "image": "img\/oatmeal_raisin.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Sugar Cookie",
+        "category": "cookies",
+        "price": 2,
+        "image": "img\/sugar_cookie.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Peanut Butter Cookie",
+        "category": "cookies",
+        "price": 2.75,
+        "image": "img\/peanut_butter.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Croissant",
+        "category": "pastries",
+        "price": 3.75,
+        "image": "img\/croissant.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Danish Pastry",
+        "category": "pastries",
+        "price": 3.5,
+        "image": "img\/danish_pastry.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Blueberry Muffin",
+        "category": "pastries",
+        "price": 4,
+        "image": "img\/blueberry_muffins.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Cinnamon Roll",
+        "category": "pastries",
+        "price": 3.5,
+        "image": "img\/cinnamon_roll.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Tiramisu",
+        "category": "desserts",
+        "price": 6.5,
+        "image": "img\/tiramisu.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Cheesecake",
+        "category": "desserts",
+        "price": 7,
+        "image": "img\/cheesecake.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Chocolate Brownie",
+        "category": "desserts",
+        "price": 5.5,
+        "image": "img\/chocolate_brownie.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Fruit Tart",
+        "category": "desserts",
+        "price": 6,
+        "image": "img\/fruit_tart.jpg"
+    }
+]

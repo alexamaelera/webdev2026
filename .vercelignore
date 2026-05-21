@@ -1,0 +1,15 @@
+# Ignore server-side/backend files and database scripts
+**/*.php
+**/*.sql
+**/setup_database.sql
+
+# Ignore local node modules and build artifacts (Vercel will install/build)
+node_modules/
+dist/
+
+# Ignore workspace files
+*.code-workspace
+.vscode/
+
+# Keep public assets like img/ if referenced by the frontend
+!img/

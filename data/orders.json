@@ -1,0 +1,26 @@
+[
+	{
+		"order_id": 1,
+		"user_id": null,
+		"guest_name": "Alexa Mae",
+		"guest_address": "basdacy",
+		"created_at": "2026-03-30T10:30:08",
+		"total": 3.5,
+		"status": "going",
+		"items": [
+			{ "id": 1, "name": "Espresso", "price": 3.5, "quantity": 1 }
+		]
+	},
+	{
+		"order_id": 2,
+		"user_id": null,
+		"guest_name": "Alexa Mae",
+		"guest_address": "basdacuu",
+		"created_at": "2026-03-30T10:50:58",
+		"total": 4.5,
+		"status": "pending",
+		"items": [
+			{ "id": 2, "name": "Cappuccino", "price": 4.5, "quantity": 1 }
+		]
+	}
+]
