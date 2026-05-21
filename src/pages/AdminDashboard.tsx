@@ -72,6 +72,8 @@ async function fetchJsonWithTimeout(url: string, timeout = 7000) {
     const res = await fetch(url, { signal: controller.signal })
     clearTimeout(id)
     if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`)
+    const ct = (res.headers.get('content-type') || '').toLowerCase()
+    if (!ct.includes('application/json')) throw new Error(`Invalid content-type for ${url}: ${ct}`)
     return res.json()
   } finally {
     clearTimeout(id)

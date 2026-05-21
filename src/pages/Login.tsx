@@ -37,7 +37,11 @@ export default function Login() {
     let dataUsers: AppUser[] = []
     try {
       const res = await fetch('/data/users.json')
-      if (res.ok) dataUsers = await res.json()
+      if (res.ok) {
+        const ct = (res.headers.get('content-type') || '').toLowerCase()
+        if (ct.includes('application/json')) dataUsers = await res.json()
+        else throw new Error('Invalid content-type')
+      }
     } catch {
       dataUsers = []
     }
