@@ -47,7 +47,18 @@ export default function Login() {
     }
 
     const storedUsers = JSON.parse(localStorage.getItem('users_v1') || '[]')
-    const all = [...(Array.isArray(dataUsers) ? dataUsers : []), ...(Array.isArray(storedUsers) ? storedUsers : [])] as AppUser[]
+    // Embedded fallback users to guarantee admin/staff login works even when remote data is unavailable
+    const embeddedFallback: AppUser[] = [
+      { id: 1, username: 'jireh', password: 'faith', role: 'admin', email: 'jireh@lexandnitchcafe.com' },
+      { id: 2, username: 'ali', password: 'ali123', role: 'staff', email: 'ali@gmail.com' },
+      { id: 3, username: 'jai', password: '212121', role: 'staff', email: 'jai@local' }
+    ]
+
+    const all = [
+      ...(Array.isArray(dataUsers) ? dataUsers : []),
+      ...(Array.isArray(storedUsers) ? storedUsers : []),
+      ...embeddedFallback
+    ] as AppUser[]
 
     // Return combined users (stored users override seed when username/email conflict)
     const dedup = new Map<string, AppUser>()
