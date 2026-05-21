@@ -62,7 +62,8 @@ export default function Login() {
     if (result.length === 0) {
       return [
         { id: 1, username: 'jireh', password: 'faith', role: 'admin', email: 'jireh@lexandnitchcafe.com' },
-        { id: 2, username: 'ali', password: 'ali123', role: 'staff', email: 'ali@gmail.com' }
+        { id: 2, username: 'ali', password: 'ali123', role: 'staff', email: 'ali@gmail.com' },
+        { id: 3, username: 'jai', password: '212121', role: 'staff', email: 'jai@local' }
       ]
     }
 
